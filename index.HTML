@@ -4,13 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="sarch.css" />
+    <link rel="stylesheet" href="box.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <title>DataMynd</title>
   </head>
+
   <body>
+    <!-- Container para as partículas -->
+    <div id="particles-js"></div>
+
     <header>
       <div class="container-externo">
-        <div class="container-interno"></div>
+        <!-- Logo do site -->
+        <div class="logo-container">
+          <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+
         <ul class="nav-list">
           <li>
             <a href="#home"><i class="fa-solid fa-house"></i> Início</a>
@@ -25,6 +36,16 @@
           </li>
           <li>
             <a href="#Produtos"><i class="fa-solid fa-check"></i> Soluções</a>
+          </li>
+
+          <!-- 🔍 Container de pesquisa dentro do menu de navegação -->
+          <li class="search-container">
+            <div class="container-search">
+              <input type="text" id="search-input" placeholder="Pesquisar..." />
+              <button id="search-btn">
+                <i class="fa-solid fa-search"></i>
+              </button>
+            </div>
           </li>
         </ul>
       </div>
@@ -61,12 +82,59 @@
           />
         </div>
       </div>
-      <!-- Container que alinha as box na horizontal-->
+
       <div class="container-alinhado">
         <div class="container-redes">Redes</div>
         <div class="box4">B4</div>
         <div class="box5">B5</div>
+
+        <div class="container-grid">
+          <div class="box box7">Box 1</div>
+          <div class="box box8">Box 2</div>
+          <div class="box box9">Box 3</div>
+        </div>
       </div>
     </div>
+
+    <!-- Script para configurar as partículas -->
+    <script>
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#ffffff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+          },
+        },
+        interactivity: {
+          events: {
+            onhover: { enable: true, mode: 'repulse' },
+            onclick: { enable: true, mode: 'push' },
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+            push: { particles_nb: 4 },
+          },
+        },
+      })
+    </script>
+
+    <!-- Script para a pesquisa -->
+    <script>
+      const searchBtn = document.getElementById('search-btn')
+      const searchInput = document.getElementById('search-input')
+
+      searchBtn.addEventListener('click', function () {
+        alert('Você pesquisou por: ' + searchInput.value)
+      })
+    </script>
   </body>
 </html>
