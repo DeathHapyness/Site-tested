@@ -1,0 +1,72 @@
+/* Estilos para telas pequenas (Mobile First) */
+@media (max-width: 599px) {
+  .container-alinhado {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .container-redes,
+  .box4 {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Ajustes em imagens para não saírem do container */
+  .image-side img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ajuste para não estourar o layout */
+  .container-produtos {
+    width: 90%;
+    margin: 120px auto 0 auto;
+    padding: 15px;
+  }
+}
+
+/* Ajustes para tablets e telas médias */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .container-alinhado {
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem melhor */
+    gap: 10px;
+  }
+
+  .container-redes {
+    width: 70%;
+  }
+
+  .box4 {
+    width: 45%;
+  }
+
+  /* Ajuste para garantir que os textos e imagens não fiquem desproporcionais */
+  .text-side {
+    font-size: 18px;
+  }
+
+  .image-side img {
+    max-width: 80%;
+  }
+}
+
+/* Ajustes para desktops e telas grandes */
+@media (min-width: 1024px) {
+  .container-redes {
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    max-height: 500px;
+  }
+
+  .box4 {
+    height: auto;
+    max-height: 500px;
+  }
+
+  /* Ajuste na largura máxima para evitar telas ultralargas quebrando o layout */
+  .container-produtos {
+    max-width: 1200px;
+  }
+}
