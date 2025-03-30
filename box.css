@@ -1,0 +1,123 @@
+.box4 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-image: url('https://www.cisco.com/c/pt_br/index/jcr:content/homepagemaincontentparsys/full_9e22/Full/mosaic_row_wide_narr_800259895/mosaic_col_narrow_parsys/mosaic_narrow_tile_8.img.jpg/1732739228096.jpg');
+  background-position: center;
+  padding: 10px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+.box5 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background-image: url('https://marketplace.canva.com/EAElIfjLGsg/1/0/1600w/canva-gato-antes-do-café-depois-do-café-duas-fotos-e-texto-meme-OxjRdmme1K4.jpg');
+  padding: 10px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Criando uma nova linha para as boxes 7, 8 e 9 */
+.container-grid {
+  grid-column: 1 / 4; /* Ocupa toda a largura */
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  flex: 1;
+  height: 250px; /* Ajustado para um tamanho menor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 10px;
+  color: white;
+}
+
+.box7 {
+  background-image: url('https://i.pinimg.com/originals/18/03/e4/1803e467763714a25212fe2ed75a0a8a.png');
+  background-size: cover; /* Ajusta a imagem para cobrir toda a box */
+  background-position: center; /* Centraliza a imagem */
+  border-radius: 10px;
+  color: white;
+}
+
+.box8 {
+  background-image: url('https://pbs.twimg.com/media/E4MnyAPWYAAiYRM.jpg');
+  background-size: cover; /* Ajusta a imagem para cobrir toda a box */
+  background-position: center; /* Centraliza a imagem */
+  border-radius: 10px;
+  color: white;
+}
+
+.box9 {
+  background-image: url('https://images7.memedroid.com/images/UPLOADED658/65e0dbaf87e53.jpeg');
+  background-size: cover; /* Ajusta a imagem para cobrir toda a box */
+  background-position: center; /* Centraliza a imagem */
+  border-radius: 10px;
+  color: white;
+}
+.container-search {
+  background-color: #0d274d;
+}
+/* CONFIGURACOES DE PARTICULAS*/
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0d274d; /* Cor de fundo do seu site */
+  z-index: -1; /* Para ficar atrás do conteúdo */
+}
+/* Configuração das boxes */
+.box {
+  display: flex;
+  align-items: flex-end; /* 🔽 Alinha o texto no canto inferior */
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  height: 450px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Configuração específica das imagens */
+.redes {
+  background-image: url('https://www.cisco.com/content/dam/global/pt_br/home/hatch-library-security-marquee-1600x480.jpg');
+}
+
+.box4 {
+  background-image: url('https://www.cisco.com/c/pt_br/index/jcr:content/homepagemaincontentparsys/full_9e22/Full/mosaic_row_wide_narr_800259895/mosaic_col_narrow_parsys/mosaic_narrow_tile_8.img.jpg/1732739228096.jpg');
+}
+
+.box5 {
+  background-image: url('https://marketplace.canva.com/EAElIfjLGsg/1/0/1600w/canva-gato-antes-do-café-depois-do-café-duas-fotos-e-texto-meme-OxjRdmme1K4.jpg');
+}
+
+.box7 {
+  background-image: url('https://i.pinimg.com/originals/18/03/e4/1803e467763714a25212fe2ed75a0a8a.png');
+}
+
+.box8 {
+  background-image: url('https://pbs.twimg.com/media/E4MnyAPWYAAiYRM.jpg');
+}
+
+.box9 {
+  background-image: url('https://images7.memedroid.com/images/UPLOADED658/65e0dbaf87e53.jpeg');
+}
