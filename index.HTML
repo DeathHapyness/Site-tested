@@ -84,20 +84,27 @@
       </div>
 
       <div class="container-alinhado">
-        <div class="container-redes">Redes</div>
-        <div class="box4">B4</div>
-        <div class="box5">B5</div>
+        <div class="box3">
+          <h2>Protega o servidor da sua empresa.</h2>
+        </div>
+        <div class="box4"><h1>Simplifique tudo em larga escala</h1></div>
+        <div class="box5"><h1>Desenvolva sua IA</h1></div>
 
         <div class="container-grid">
-          <div class="box box7">Box 1</div>
-          <div class="box box8">Box 2</div>
-          <div class="box box9">Box 3</div>
+          <div class="box box7"><h2>Promocoes e testes gratuitos</h2></div>
+          <div class="box box8">
+            <h2>Monte um switch para seu servidor.</h2>
+          </div>
+          <div class="box box9">
+            <h2>Solucoes gerenciadas na nuvem para voce.</h2>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Script para configurar as partículas -->
     <script>
+      // Configuração do particles.js
       particlesJS('particles-js', {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -125,15 +132,18 @@
           },
         },
       })
-    </script>
 
-    <!-- Script para a pesquisa -->
-    <script>
-      const searchBtn = document.getElementById('search-btn')
-      const searchInput = document.getElementById('search-input')
+      // Aguardar o DOM carregar completamente antes de adicionar o evento de clique
+      document.addEventListener('DOMContentLoaded', function () {
+        const searchBtn = document.getElementById('search-btn')
+        const searchInput = document.getElementById('search-input')
 
-      searchBtn.addEventListener('click', function () {
-        alert('Você pesquisou por: ' + searchInput.value)
+        // Verificar se os elementos existem antes de adicionar o evento
+        if (searchBtn && searchInput) {
+          searchBtn.addEventListener('click', function () {
+            alert('Você pesquisou por: ' + searchInput.value)
+          })
+        }
       })
     </script>
   </body>
