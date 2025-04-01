@@ -81,6 +81,7 @@
   background: #0d274d; /* Cor de fundo do seu site */
   z-index: -1; /* Para ficar atrás do conteúdo */
 }
+
 /* Configuração das boxes */
 .box {
   display: flex;
@@ -95,29 +96,75 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+  transition: background 0.3s ease; /* Transição suave para o efeito */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Cor inicial com transparência */
 }
 
 /* Configuração específica das imagens */
-.redes {
-  background-image: url('https://www.cisco.com/content/dam/global/pt_br/home/hatch-library-security-marquee-1600x480.jpg');
+.box3 {
+  background-image: url('https://www.cisco.com/c/pt_br/index/jcr:content/homepagemaincontentparsys/full_9e22/Full/mosaic_row_wide_narr_800259895/mosaic_col_wide_parsys/mosaic_tile_wide_9b3.img.jpg/1732815320698.jpg');
+  display: flex;
+  align-items: flex-end; /* 🔽 Alinha o texto no canto inferior */
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  height: 480px;
+  width: 95%;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  color: aquamarine;
 }
 
 .box4 {
   background-image: url('https://www.cisco.com/c/pt_br/index/jcr:content/homepagemaincontentparsys/full_9e22/Full/mosaic_row_wide_narr_800259895/mosaic_col_narrow_parsys/mosaic_narrow_tile_8.img.jpg/1732739228096.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aquamarine;
 }
-
 .box5 {
-  background-image: url('https://marketplace.canva.com/EAElIfjLGsg/1/0/1600w/canva-gato-antes-do-café-depois-do-café-duas-fotos-e-texto-meme-OxjRdmme1K4.jpg');
+  background-image: url('https://www.cisco.com/c/pt_br/index/jcr:content/homepagemaincontentparsys/full_9e22/Full/mosaic_row_thirds_4e_1907606069/mosaic_col_third_2_parsys/section_container_4d/target_content_parsys/mosaic_narrow_tile_b.img.jpg/1732739257121.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aquamarine;
 }
 
 .box7 {
-  background-image: url('https://i.pinimg.com/originals/18/03/e4/1803e467763714a25212fe2ed75a0a8a.png');
+  background-image: url('https://static.portaldaindustria.com.br/portaldaindustria/noticias/media/imagem_plugin/ti.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aquamarine;
 }
 
 .box8 {
-  background-image: url('https://pbs.twimg.com/media/E4MnyAPWYAAiYRM.jpg');
+  background-image: url('https://blog.unoeste.br/wp-content/uploads/2024/05/perfil-profissional-TI.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aquamarine;
 }
 
 .box9 {
-  background-image: url('https://images7.memedroid.com/images/UPLOADED658/65e0dbaf87e53.jpeg');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQfYa1lgQLsfs6xN0AFL5dQC0P1fa24iVmOQ&s');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aquamarine;
 }
