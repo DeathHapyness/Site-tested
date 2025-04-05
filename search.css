@@ -2,18 +2,17 @@
 .nav-list {
   list-style-type: none;
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente */
+  align-items: center;
   justify-content: flex-start;
-  margin-left: 10px; /* Adiciona um espaço na esquerda */
+  margin-left: 10px;
 }
-
 .logo-container {
-  margin-right: 20px; /* Espaço entre o logo e os itens do menu */
+  margin-right: 20px;
 }
 
 /* 🔍 Container de pesquisa */
 .search-container {
-  margin-left: 20px; /* Distância entre o item "Soluções" e a barra de pesquisa */
+  margin-left: 20px;
 }
 
 .container-search {
@@ -45,7 +44,6 @@
   color: #555;
 }
 
-/* Expansão do input ao passar o mouse */
 .container-search:hover #search-input {
   width: 150px;
   opacity: 1;
