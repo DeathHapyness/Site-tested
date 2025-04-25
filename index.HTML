@@ -3,32 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style1.css" />
-    <link rel="stylesheet" href="sarch.css" />
-    <link rel="stylesheet" href="box.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <title>DataMynd</title>
+    <title>DataMind</title>
+    <style>
+      /* Estilo do Modal */
+
+      .modal {
+        display: none; /* Esconde o modal por padrão */
+        position: fixed; /* Fica fixo na tela */
+        z-index: 1000; /* Fica sobre outros elementos */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+        border-radius: 20px;
+      }
+
+      .modal-content {
+        background: url('https://m.media-amazon.com/images/I/31Kr2UxxIjL._AC_UF894,1000_QL80_.jpg');
+        background-size: cover;
+        background-position: center;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 5px;
+        width: 500px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .password-container {
+        position: relative;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      button {
+        background-color: #0d274d91; /* Cor de fundo do botão */
+        color: white;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      p a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Container para as partículas -->
     <div id="particles-js"></div>
 
     <header>
-      <div class="container-externo">
-        <!-- Logo do site -->
+      <div
+        class="container-externo"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
         <div class="logo-container">
           <img
-            src="https://api.datamind.vn/uploads/logo.png"
+            src="https://tradewithgeorgia.com/uploads/user_image/625d9eea79dce.jpg"
             alt="Logo"
             class="logo"
           />
         </div>
-
-        <ul class="nav-list">
+        <ul
+          class="nav-list"
+          style="
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          "
+        >
           <li>
-            <a href="#home"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="#home" class="botao"
+              ><i class="fa-solid fa-house"></i> Início</a
+            >
           </li>
           <li>
             <a href="#sobre"><i class="fa-solid fa-star"></i> Soluções</a>
@@ -41,23 +107,69 @@
           <li>
             <a href="#Produtos"><i class="fa-solid fa-check"></i> Soluções</a>
           </li>
-
-          <!-- 🔍 Container de pesquisa dentro do menu de navegação -->
-          <li class="search-container">
-            <div class="container-search">
+          <li class="search-container" style="margin-left: 20px">
+            <div
+              class="container-search"
+              style="display: flex; align-items: center"
+            >
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg=="
+                alt="Ícone exemplo"
+              />
               <input type="text" id="search-input" placeholder="Pesquisar..." />
-              <button id="search-btn">
+              <button
+                id="search-btn"
+                style="background: none; border: none; cursor: pointer"
+              >
                 <i class="fa-solid fa-search"></i>
               </button>
             </div>
           </li>
         </ul>
+
+        <!-- Botão de Login -->
+        <button
+          class="container-login"
+          id="openModalBtn"
+          style="margin-left: 20px"
+        >
+          Login/Cadastrar-se
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO5JREFUSEvVldENwjAMRK+bwCTAJjAJMAlsApsAkwCHEtS6jm0ligSWqvaj9bPPznVA5xg650cUsACwB7B9X3cAVwDH9GzWGAGsAVyULATtEqwIiQBuANiBFoQsrRY8ACU5OXPaWF14gEPS3mJwFnxPDQ9Q0n+cjHM41wKoPQfcbQYszOrC1J8fexLlzvM5IIyRV5T35nPg5fhtANdvleYgK82W8ahZU2rNA1baHg2m2oY25Mjul3SfbZUGsLzHG/jMmyQgYg0eZGIdEkDdaXAtwX8FpfqEBLTIk3NOZJKAZ0vpo2+/eaNWUc39f8ALCDsoGfKFTMgAAAAASUVORK5CYII="
+          />
+        </button>
       </div>
     </header>
 
+    <!-- O Modal de Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="username">Usuário:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+          /><br /><br />
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          /><br /><br />
+          <button type="submit">Entrar</button>
+        </form>
+        <p><button id="forgotPassword">Esqueceu a senha?</button></p>
+        <p><button id="createAccount">Criar conta</button></p>
+      </div>
+    </div>
+
     <div class="container-produtos">
       <div class="box1"></div>
-
       <div class="box2">
         <div class="icon-container">
           <box-icon name="download"></box-icon>
@@ -86,29 +198,81 @@
           />
         </div>
       </div>
-
-      <div class="container-alinhado">
-        <div class="box3">
-          <h2>Protega o servidor da sua empresa.</h2>
-        </div>
-        <div class="box4"><h1>Simplifique tudo em larga escala</h1></div>
-        <div class="box5"><h1>Desenvolva sua IA</h1></div>
-
-        <div class="container-grid">
-          <div class="box box7"><h2>Promocoes e testes gratuitos</h2></div>
-          <div class="box box8">
-            <h2>Monte um switch para seu servidor.</h2>
-          </div>
-          <div class="box box9">
-            <h2>Solucoes gerenciadas na nuvem para voce.</h2>
-          </div>
-        </div>
+      <!-- Nova seção com container-grid -->
+      <div class="container-grid">
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://odatacolocation.com/wp-content/uploads/2021/12/shutterstock_1929852050-1110x390.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 1!')"
+        >
+          <h1>Monte seu proprio servidor ou homelab</h1>
+        </button>
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://www.moneytimes.com.br/uploads/2020/03/inteligencia-artificial-cerebro-maquina-tecnologia.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 2!')"
+        >
+          <h1>Desenvolva sua IA conosco</h1>
+        </button>
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://crmservices.com.br/blog/wp-content/uploads/2023/12/Sistemas-de-automacao-industrial.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 3!')"
+        >
+          <h1>Automatize sua empresa</h1>
+        </button>
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://t4.ftcdn.net/jpg/05/96/89/71/360_F_596897127_EZfIxmLrtfqUW0IFXgIh3qzHN3hxs0TP.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 4!')"
+        >
+          <h1>Melhore a segurança da sua empresa com a gente</h1>
+        </button>
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/06/desenvolver-projetos.png');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 5!')"
+        >
+          <h1>
+            Estude redes e programação totalmente de graça pela nossa plataforma
+          </h1>
+        </button>
+        <button
+          class="grid-item"
+          style="
+            background-image: url('https://img.freepik.com/vetores-premium/desenvolvimento-de-software-de-site-conceito-de-equipe-de-programadores-de-aplicativos-engenheiros-de-codigo-programacao-em-ilustracao-vetorial-de-computador-programadores-e-desenvolvedores-de-software-desenvolvimento-de-programadores-de-software_229548-2625.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+          onclick="alert('Você clicou no Item 6!')"
+        >
+          <h1>Melhore sua equipe de TI</h1>
+        </button>
       </div>
     </div>
 
     <!-- Script para configurar as partículas -->
     <script>
-      // Configuração do particles.js
       particlesJS('particles-js', {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -137,18 +301,51 @@
         },
       })
 
-      // Aguardar o DOM carregar completamente antes de adicionar o evento de clique
-      document.addEventListener('DOMContentLoaded', function () {
-        const searchBtn = document.getElementById('search-btn')
-        const searchInput = document.getElementById('search-input')
+      // Modal de Login
+      var modal = document.getElementById('loginModal')
+      var openModalBtn = document.getElementById('openModalBtn')
+      var closeModalBtn = document.getElementById('closeModalBtn')
 
-        // Verificar se os elementos existem antes de adicionar o evento
-        if (searchBtn && searchInput) {
-          searchBtn.addEventListener('click', function () {
-            alert('Você pesquisou por: ' + searchInput.value)
-          })
+      openModalBtn.onclick = function () {
+        modal.style.display = 'flex'
+      }
+
+      closeModalBtn.onclick = function () {
+        modal.style.display = 'none'
+      }
+
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none'
         }
-      })
+      }
+
+      document
+        .getElementById('loginForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault()
+          alert('Login realizado com sucesso!')
+          modal.style.display = 'none' // Fecha o modal após o login
+        })
+
+      // Funcionalidade para o botão "Esqueceu a senha?"
+      document
+        .getElementById('forgotPassword')
+        .addEventListener('click', function () {
+          alert(
+            'Você clicou em "Esqueceu a senha". Implemente a funcionalidade aqui.'
+          )
+        })
+
+      // Funcionalidade para o botão "Criar conta"
+      document
+        .getElementById('createAccount')
+        .addEventListener('click', function () {
+          alert(
+            'Você clicou em "Criar conta". Implemente a funcionalidade aqui.'
+          )
+        })
     </script>
   </body>
 </html>
+```
