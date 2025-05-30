@@ -7,59 +7,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <title>DataMind</title>
-    <style>
-      /* Estilo do Modal */
-
-      .modal {
-        display: none; /* Esconde o modal por padrão */
-        position: fixed; /* Fica fixo na tela */
-        z-index: 1000; /* Fica sobre outros elementos */
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-        border-radius: 20px;
-      }
-
-      .modal-content {
-        background: url('https://m.media-amazon.com/images/I/31Kr2UxxIjL._AC_UF894,1000_QL80_.jpg');
-        background-size: cover;
-        background-position: center;
-        margin: 10% auto;
-        padding: 20px;
-        border-radius: 5px;
-        width: 500px;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .password-container {
-        position: relative;
-      }
-
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-      button {
-        background-color: #0d274d91; /* Cor de fundo do botão */
-        color: white;
-        padding: 10px 20px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      p a:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <style></style>
   </head>
 
   <body>
@@ -128,55 +76,29 @@
         </ul>
 
         <!-- Botão de Login -->
-        <button
-          class="container-login"
-          id="openModalBtn"
-          style="margin-left: 20px"
-        >
-          Login/Cadastrar-se
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO5JREFUSEvVldENwjAMRK+bwCTAJjAJMAlsApsAkwCHEtS6jm0ligSWqvaj9bPPznVA5xg650cUsACwB7B9X3cAVwDH9GzWGAGsAVyULATtEqwIiQBuANiBFoQsrRY8ACU5OXPaWF14gEPS3mJwFnxPDQ9Q0n+cjHM41wKoPQfcbQYszOrC1J8fexLlzvM5IIyRV5T35nPg5fhtANdvleYgK82W8ahZU2rNA1baHg2m2oY25Mjul3SfbZUGsLzHG/jMmyQgYg0eZGIdEkDdaXAtwX8FpfqEBLTIk3NOZJKAZ0vpo2+/eaNWUc39f8ALCDsoGfKFTMgAAAAASUVORK5CYII="
-          />
-        </button>
+        <div class="login-box">
+          <a href="login.html" class="btn" target="_blank"
+            >Login/Cadastrar-se</a
+          >
+        </div>
+
+        <!--</dialog> <a href="login.html" class="btn">Login/Cadastrar-se</a>-->
       </div>
     </header>
-
-    <!-- O Modal de Login -->
-    <div id="loginModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeModalBtn">&times;</span>
-        <h2>Login</h2>
-        <form id="loginForm">
-          <label for="username">Usuário:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            required
-          /><br /><br />
-          <label for="password">Senha:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-          /><br /><br />
-          <button type="submit">Entrar</button>
-        </form>
-        <p><button id="forgotPassword">Esqueceu a senha?</button></p>
-        <p><button id="createAccount">Criar conta</button></p>
-      </div>
-    </div>
 
     <div class="container-produtos">
       <div class="box1"></div>
       <div class="box2">
+        <!--
+        ICONES ABAIXO DA BOX PRINCIPAL  
         <div class="icon-container">
           <box-icon name="download"></box-icon>
           <box-icon type="solid" name="brain"></box-icon>
           <box-icon name="support"></box-icon>
           <box-icon name="cog"></box-icon>
         </div>
+        -->
+
         <div class="text-container">
           <h3>Desafios difíceis? Soluções personalizadas.</h3>
           <p>
@@ -348,4 +270,3 @@
     </script>
   </body>
 </html>
-```
