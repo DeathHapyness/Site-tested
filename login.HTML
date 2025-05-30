@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css" />
+
+    <!-- Adicione esta linha para importar os ícones Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button onclick="window.location.href='index.html'" class="seta-back">
+      <i class="bx bx-undo"></i>
+    </button>
+
+    <div class="ring">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+    <div class="login">
+      <h2>Login</h2>
+      <h1 class="logo">DATAMIND</h1>
+      <div class="inputBx">
+        <input type="text" placeholder="Username" />
+      </div>
+      <div class="inputBx">
+        <input type="password" placeholder="Password" />
+      </div>
+      <div class="inputBx">
+        <button type="submit" class="btn">Sign in</button>
+      </div>
+      <div class="inputBx">
+        <button
+          type="button"
+          class="btn"
+          onclick="location.href='register.html'"
+        >
+          Sign up
+        </button>
+      </div>
+      <div class="inputBx">
+        <button
+          type="button"
+          class="btn"
+          onclick="location.href='forgot-password.html'"
+        >
+          Forgot Password
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
